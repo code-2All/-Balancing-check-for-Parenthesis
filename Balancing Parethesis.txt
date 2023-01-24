@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<conio.h>
+int i,top=-1;
+void push(char);
+void pop();
+char e[20],stack[20];
+int main()
+{
+	printf("enter the string");
+	scanf("%s",&e);
+	for(i=0;e[i]!='\o';i++)
+	{
+		if(e[i]=='(')
+		{
+			push(e[i]);
+		}
+		else if(e[i]==')')
+		{
+			pop();
+		}	
+	}
+	if(top==-1)
+	{
+		printf("valid");
+	}
+	else
+	{
+		printf("not valid");
+	}
+}
+void push(char e)
+{
+	top=top+1;
+	stack[top]=e;
+}	
+void pop()
+{
+
+	top=top-1;
+}
